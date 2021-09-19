@@ -1,16 +1,24 @@
-# This is a sample Python script.
 
-# Press ⌘[ to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
+# data = []
+# with open("./weather_data.csv") as file_to_open:
+#     contents = file_to_open.readlines()
+#
+#     for content in contents:
+#         strip_content = content.strip()
+#         data.append(strip_content)
 
+# import csv
+#
+# with open("./weather_data.csv") as file_to_open:
+#     data_content = csv.reader(file_to_open)
+#     temperaturs = []
+#     for row in data_content:
+#         if row[1] != 'temp':
+#             temperaturs.append(int(row[1]))
+#
+# print(temperaturs)
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
+import pandas
 
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+data = pandas.read_csv("./weather_data.csv")
+print(data)
