@@ -18,7 +18,24 @@
 #
 # print(temperaturs)
 
-import pandas
+import pandas as pd
 
-data = pandas.read_csv("./weather_data.csv")
+data = pd.read_csv("./weather_data.csv")
+print(type(data))
+print('\n')
 print(data)
+print(data['temp'])
+
+dataDict = data.to_dict()  # transfert to dictionaty
+print(dataDict)
+
+list_temp = data['temp'].to_list()
+print('\n',list_temp )
+
+average  = sum(list_temp)/len(list_temp)
+print(round(average, 2))
+
+# Series
+
+print(data['temp'].mean())
+print(data['temp'].max())
