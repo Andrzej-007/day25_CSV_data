@@ -36,12 +36,36 @@ data = pd.read_csv("./weather_data.csv")
 # average  = sum(list_temp)/len(list_temp)
 # print(round(average, 2))
 #
-# # Series
+# # Series -> colums
 #
 # print(data['temp'].mean())
 # print(data['temp'].max())
 
-# Get Data in Raw
+# Get Data form  Raw
 temp_max = data.temp.max()
 print(data[data.day == 'Monday'])
 print(data[data.temp == data.temp.max()])
+
+# specific -> row starting from maonday
+monday_day = data[data.day == "Monday"]
+                        # below there is difference
+fahreinheit_1 = (int(monday_day['temp']) * 9/5) + 32
+print(f'fahreinheit_1 {fahreinheit_1}')
+# another way of calculation :
+                        # below there is difference
+fahreinheit_2 = (int(monday_day.temp) * 9/5) + 32
+print(f'fahreinheit_2 {fahreinheit_2}')
+
+
+# Creating dataFrame from scratch
+
+data_dict = {
+    'students':['anna', 'greg', 'donse'],
+    'scores': [4, 3, 5]
+}
+
+panda_data = pd.DataFrame(data_dict)
+print(panda_data)
+panda_data.to_csv("new_file_csv")
+
+#converting into csv file 
