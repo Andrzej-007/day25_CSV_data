@@ -64,8 +64,15 @@ data_dict = {
     'scores': [4, 3, 5]
 }
 
+# data_dict = {
+#     'gray': 7,
+#     'blue': 34,
+#     'red': 11
+#
+# }
+
 panda_data = pd.DataFrame(data_dict)
-print(panda_data)
+print(f'panda_data: \n{panda_data}')
 panda_data.to_csv("new_file_csv")
 
 #converting into csv file 
